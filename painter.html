@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> Painter details</title>
+    </head>
+ 
+<body>
+    <h1> Painter Naga Anudeep Yalamanchi</h1>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="pin">The hidden painter name</label>
+    <input type ="password" id="pin" value="Monet"> <br>
+
+    <label for="check">Guess the painter</label>
+    <input type ="text" id="check"> <br>
+
+    <input type="button" onclick="checkPainter()" value="Check the guess">
+</form>
+
+
+<p id="result">Results.</p>
+
+<script> 
+var good = 0;
+var oops = 0;
+function checkPainter(){
+    painter = document.getElementById("pin").value
+    guess = document.getElementById("check").value
+    if(painter==guess){
+        good=good+1
+        alert("You got it right")
+    }else{
+        oops=oops+1
+        alert("Sorry")
+    }
+    
+    out = document.getElementById("result")
+    if(good==1){
+     out.innerHTML = "Right count=" +good
+    }if(oops==1){
+        out.innerHTML= "Wrong count=" +oops
+    }
+}
+</script>
+
+</body>
+</html> 
