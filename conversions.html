@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>
+        CURRENCY CONVERSION
+    </title>
+ </head>
+<body>
+
+<h2>Naga Anudeep Yalamanchi shows currency conversions</h2>
+
+<form>
+    <label for="form1_base">Enter base amout </label>
+    <input type ="number" id="form1_base" name="form1_base" value="50"> <br>
+
+    <label for="form1_conversion">Enter the conversion rate </label>
+    <input type ="number" id="form1_conversion" name="form1_conversion" value="35"> <br>
+
+    <input type="button" onclick="convert()" value="show conversions">
+</form>
+<p id="result">The result will be displayed here:</p>
+
+<script> 
+function convert(){
+    console.log("Getting form values")
+    base = document.getElementById("form1_base").value
+    conversion = document.getElementById("form1_conversion").value
+    conversion=base*conversion
+    var toShow=""
+    toShow+=base+" is "+Math.round(conversion*100)/100+"; "
+    for(var i=2; i<=5;i++){
+        base*=2
+        conversion*=2
+        toShow+=base+" is "+Math.round(conversion*100)/100+"; "
+    }
+    out = document.getElementById("result")
+    out.innerHTML = "Conversions are: "+toShow
+}
+</script>
+</body>
+</html> 
