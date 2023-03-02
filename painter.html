@@ -28,25 +28,30 @@ var oops = 0;
 function checkPainter(){
     painter = document.getElementById("pin").value
     guess = document.getElementById("check").value
+    out=document.getElementById("result")
     if(painter==guess){
         good=good+1
         alert("You got it right")
+        out.innerHTML = "Right count: "+good
     }else{
         oops=oops+1
         alert("Sorry")
+        out.innerHTML="Wrong count: "+oops
     }
-    
-    out = document.getElementById("result")
-    if(good==1){
-     out.innerHTML = "Right count=" +good
-    }if(oops==1){
-        out.innerHTML= "Wrong count=" +oops
+    if(oops==10){
+        alertButton()
     }
 }
+    
+function alertButton(){
+        alert("sorry, you ran out of guesses.")
+        oops=0
+        out.innerHTML= "Wrong count=" +oops
+    }
 </script>
 
 <div class="container">
-    <img src="Lavatera.jpg" height="=100" width="100" onclick="selectImage()" id="getimage">
+    <img src="Lavatera.jpg" height="100" width="100" onclick="selectImage()" id="getimage">
 </div>
 <script>
     var useimage=1
